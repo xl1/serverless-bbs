@@ -1,0 +1,19 @@
+{
+  "name": "keijiban",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "func start"
+  },
+  "author": "xl1",
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/rest": "^17.9.2"
+  },
+  "devDependencies": {
+    "@azure/functions": "^1.2.0",
+    "typescript": "^3.9.3"
+  }
+}
