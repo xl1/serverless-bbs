@@ -18,13 +18,16 @@ export const api = {
     get() {
         return fetch('./data/posts.ndjson').then(r => r.text()).then(parse);
     },
-    post(obj) {
-        return fetch('/api/post', {
+    async post(obj) {
+        const r = await fetch('/api/posts', {
             method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-            },
+            headers: { 'content-type': 'application/json' },
             body: JSON.stringify(obj),
-        }).then(r => r.text()).then(parse);
+        });
+        if (r.ok) {
+            return parse(await r.text())
+        } else {
+            throw new Error(await r.text())
+        }
     }
 };
