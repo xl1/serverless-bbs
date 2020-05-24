@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>BBS</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <style>
+            .form label {
+                display: block;
+            }
+            .form__content {
+                display: block;
+                width: 320px;
+                height: 120px;
+            }
+            .form__submit {
+                margin: 16px 0;
+                padding: 8px 32px;
+            }
+            .post {
+                border-top: 1px dotted black;
+                padding: 8px 0;
+            }
+            .post__name {
+                font-weight: bold;
+            }
+            .post__time {
+                float: right;
+                font-size: small;
+                color: gray;
+            }
+            .post__content {
+                padding: 0 8px;
+                white-space: pre-wrap;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>掲示板</h1>
+        <div id="form-placeholder"></div>
+        <div id="posts-placeholder"></div>
+        <script type="module" src="index.js"></script>
+    </body>
+</html>
