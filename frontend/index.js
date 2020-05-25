@@ -28,9 +28,10 @@ async function submit(ev) {
     const button = /** @type {HTMLInputElement} */(document.getElementById('form__submit'));
     button.disabled = true;
 
-    state.posts = await api.post({ name, content });
+    state.posts = await api.post({ name, content }).finally(() => button.disabled = false);
     $posts.render();
     localStorage.setItem('name', name);
+    form.reset();
     $form.render();
 }
 
@@ -57,7 +58,7 @@ const $posts = {
 <article class="post">
     <span class="post__index">[${ i + 1 }]</span>
     <span class="post__name">${ name }</span>
-    <time class="post__time" datetime=${ date} >${ new Date(date).toLocaleString() }</time>
+    <time class="post__time" datetime=${ date }>${ new Date(date).toLocaleString() }</time>
     <div class="post__content">${ content }</div>
 </article>
         `).reverse()
