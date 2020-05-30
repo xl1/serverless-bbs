@@ -18,3 +18,14 @@ export function err(status: number, message: string): ErrorResponse {
         body: { error: message }
     };
 }
+
+export function raw<T>(data: T): SuccessResponse<T> {
+    return {
+        status: 200,
+        headers: {
+            'content-type': 'application/x-ndjson'
+        },
+        isRaw: true,
+        body: data
+    };
+}
