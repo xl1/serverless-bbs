@@ -11,6 +11,8 @@ const state = {
 
 async function main() {
     $form.render();
+    state.posts = await api.direct();
+    $posts.render();
     state.posts = await api.get();
     $posts.render();
 }
@@ -28,6 +30,7 @@ async function submit(ev) {
     const button = /** @type {HTMLInputElement} */(document.getElementById('form__submit'));
     button.disabled = true;
 
+    state.name = name;
     state.posts = await api.post({ name, content }).finally(() => button.disabled = false);
     $posts.render();
     localStorage.setItem('name', name);

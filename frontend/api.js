@@ -15,8 +15,11 @@ function parse(lines) {
 }
 
 export const api = {
-    get() {
+    direct() {
         return fetch('./data/posts.ndjson').then(r => r.text()).then(parse);
+    },
+    get() {
+        return fetch('/api/posts').then(r => r.text()).then(parse);
     },
     async post(obj) {
         const r = await fetch('/api/posts', {
