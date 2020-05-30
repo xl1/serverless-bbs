@@ -44,10 +44,10 @@ const $form = {
     },
     template: () => html`
 <form id="form" class="form" @submit=${ submit }>
-    <label>おなまえ</label>
-    <input name="name" class="form__name" maxlength="100" value=${ state.name }>
-    <label>メッセージ</label>
-    <textarea name="content" class="form__content" maxlength="1400"></textarea>
+    <label for="name">おなまえ</label>
+    <input name="name" id="name" class="form__name" maxlength="100" value=${ state.name }>
+    <label for="content">メッセージ</label>
+    <textarea name="content" id="content" class="form__content" maxlength="1400"></textarea>
     <button id="form__submit" class="form__submit" @click=${ submit }>送信する</button>
 </form>`
 };
