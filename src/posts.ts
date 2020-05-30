@@ -47,7 +47,7 @@ async function post(req: HttpRequest): Promise<HttpResponse<Buffer>> {
     try {
         await octokit.repos.createOrUpdateFile({
             ...fileParams,
-            message: 'update post.ndjson',
+            message: 'update posts.ndjson',
             content: buffer.toString('base64'),
             sha: data.sha,
             committer: {
