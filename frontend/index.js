@@ -1,6 +1,6 @@
 //@ts-check
 //@ts-ignore
-import { html, render } from 'https://unpkg.com/lit-html?module';
+import { html, render } from 'https://esm.sh/lit-html@2';
 import { api } from './api.js';
 
 const state = {
@@ -22,8 +22,8 @@ async function submit(ev) {
 
     const form = /** @type {HTMLFormElement} */(document.getElementById('form'));
     const formData = new FormData(form);
-    const name = formData.get('name').toString();
-    const content = formData.get('content').toString();
+    const name = formData.get('name')?.toString();
+    const content = formData.get('content')?.toString();
 
     if (!name || !content) return;
 
