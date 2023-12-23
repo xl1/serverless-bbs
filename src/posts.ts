@@ -1,6 +1,6 @@
 import { Octokit } from '@octokit/rest';
 import { Context, HttpRequest } from '@azure/functions';
-import { HttpResponse, err, raw } from './response';
+import { HttpResponse, err, raw } from './response.js';
 
 const octokit = new Octokit({
     auth: process.env.GITHUB_TOKEN

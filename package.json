@@ -2,6 +2,7 @@
   "name": "keijiban",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
@@ -11,10 +12,10 @@
   "author": "xl1",
   "license": "MIT",
   "dependencies": {
-    "@octokit/rest": "^17.9.2"
+    "@octokit/rest": "^17.11.2"
   },
   "devDependencies": {
-    "@azure/functions": "^1.2.0",
-    "typescript": "^3.9.3"
+    "@azure/functions": "^3.5.1",
+    "typescript": "^5.3.3"
   }
 }
